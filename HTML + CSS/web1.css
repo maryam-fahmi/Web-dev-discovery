@@ -1,0 +1,68 @@
+.bright {
+  color: rgb(16, 0, 164);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bolding {
+  font-weight: bold;  
+}
+
+div{width:300px; padding:10px; border:5px solid rgb(112, 188, 255); margin:15px;}
+
+#CE {
+  font-size: 30px;
+}
+
+.button {
+  width: 40em;
+  height: 20ex;
+  background-color: rgb(95, 203, 198);
+  border: 2px solid rgb(244, 82, 82);
+  border-radius: 5px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: bisque;
+}
+
+a:hover{
+  background-color: gold;
+}
+
+figure {
+  float: left;
+  padding: 15px;
+}
+
+section {
+  float: right;
+  padding: 50px
+}
+
+#MA {
+  display: none;
+}
+
+#MA {
+  display: block;
+}
+
+#CE {
+  visibility: visible;
+}
+
+.zindex {
+  position: relative;
+}
+
+.imagez {
+  z-index: 2;
+}
+
+.imagez2 {
+  position : absolute;
+  z-index: 3;
+}

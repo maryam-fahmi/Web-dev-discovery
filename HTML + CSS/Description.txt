@@ -1,0 +1,3 @@
+- In this website, I created a vanilla HTML and CSS website. I utilized different CSS aspects including buttons, visibility, etc. 
+To access the website on the web, use link: 
+https://www.cs.ryerson.ca/~mafahmi/web1.html

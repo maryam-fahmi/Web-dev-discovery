@@ -1,0 +1,83 @@
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+    max-width: 100%;
+    background: rgb(255, 173, 232);
+    flex-direction: column;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    background: rgb(255, 173, 232);
+    text-align: center;
+    font-family: 'Poor Story', cursive;
+}
+
+.container-fluid .parts {
+    position: relative;
+    border: 5px solid rgb(61, 181, 194);
+    width: 400px;
+    height: 300px;
+}
+
+.container .parts img {
+    position: absolute;
+}
+
+#body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5;
+    font-family: 'Poor Story', cursive;
+}
+
+input:hover {
+    transform: scale(1.1);
+    background-color: #33aaa0cc;
+}
+h2 {
+    padding: 0;
+    margin: 0;
+    background: rgb(255, 173, 232);
+    text-align: center;
+    font-family: 'Poor Story', cursive;
+}
+.image-wrapper {
+    background: rgb(255, 173, 232);
+    width: 100%;
+}
+
+#berserk-img {
+    background: rgb(255, 173, 232);
+    top: 0; 
+    left: 0;
+    width:500px; 
+    height:500px;
+    transition: width 1s ;
+}
+.image-wrapper .btn{
+    position: absolute;
+    left: 1.5rem;
+    transform: translate(-90%, 0%);
+    -ms-transform: translate(-50%, -50%);
+    color: #8a24ff;
+    padding: 2px 10px;
+    border: 0.1px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.hands {
+    width: 250px;
+    height: 100px;
+}
+
+.eyes {
+    width: 100px;
+    height: 50px;
+}

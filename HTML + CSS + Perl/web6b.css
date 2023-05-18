@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+.font {
+    font-family: 'Nerko One', cursive;
+    padding: 2px;
+  }
+
+.fonttitle {
+    font-family: 'Nerko One', cursive;
+    padding: 20px;
+    font-size: 40px;
+  }
+body {
+    background-color: powderblue;
+    text-align: center;
+}
+
+input {
+   background-color: peachpuff; 
+}
+
+select option {
+    background: peachpuff;
+}
+
+.cupcakes {
+    background: pink;
+}

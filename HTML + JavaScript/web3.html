@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            * {font-family:'Courier New', monospace;}
+        </style>
+<head>
+<body>
+    <script>
+    function Namecheck(inputname) {
+        if (inputname.value.match(/^[a-zA-Z]+$/)) {
+            alert('Name format is correct');
+            return true;} 
+        else {
+            alert('Name must only contain letters');
+            inputname.focus();
+            return false;}}
+
+    function PhoneCheck(inputphone) {
+        if (inputphone.value.match(/^[1-9]\d{2}-\d{3}-\d{4}/)) {
+            alert('Its all good in the hood!');
+            return true;}
+            else {
+            alert('Number must be ###-###-####!');
+            inputphone.focus();
+            return false;}}
+
+    function CorrectForm(inputname, addinput, inputphone) {
+        let Namecheck = false;
+        if (inputname.value.match(/^[a-zA-Z]+$/)) Namecheck = true;
+        let PhoneCheck = false;
+        if (inputphone.value.match(/^[1-9]\d{2}-\d{3}-\d{4}/)) PhoneCheck = true;
+        if (!Namecheck) alert('Name should only have letters');
+        if (!PhoneCheck) alert('Number fomatting is wrong');
+        if (Namecheck && PhoneCheck) {
+            document.getElementById('myname').innerHTML =nameinput.value;
+            document.getElementById('mynum').innerHTML =  inputphone.value;
+            document.getElementById('myaddress').innerHTML =addinput;}}
+    
+     function countall()
+    {var total=document.getElementById("text").value;
+      total=total.replace(/\s/g, '');
+      document.getElementById("total").innerHTML="Total Characters:"+total.length;}
+
+    function countletters() {
+        var total2=document.getElementById("text").value;
+        total2=total2.replace(/[^a-z]/gi, ''); 
+        document.getElementById("total2").innerHTML="Total Letters:"+total2.length;}
+
+    function makeBookmarks(mybookmarks) {
+        let bookmarks = [
+        'https://courses.ryerson.ca/d2l/home',
+        'http://info.cern.ch',];
+            for (const bm of bookmarks) {
+                var li = document.createElement('li');
+                var img = document.createElement('img');
+                img.src = bm.startsWith('https')
+                ? 'https://www.thesslstore.com/blog/wp-content/uploads/2018/11/bigstock-Flat-Design-Style-Vector-Illus-250768057-1-e1543348825124-300x300.jpg'
+                : 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Ambox_padlock_red.svg/2048px-Ambox_padlock_red.svg.png';
+                img.width = '17';
+                li.appendChild(img);
+                li.appendChild(document.createTextNode(bm));
+                mybookmarks.appendChild(li);}
+                document.getElementById('bookmarks-btn').remove();}
+
+    </script>
+    </head>
+</body>
+
+<body style="margin: 8rem" bgcolor="pink">
+    <header>
+        <h3 style="width: fit-content">
+            Lab 4: JavaScript 
+        </h3>
+    </header>
+
+    <div>
+        <div>
+            <!-- Part 1 -->
+            <p>
+                Please Enter your name, address, and phone number.
+            </p>
+
+            <form>
+                <label for="name">Name: </label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter name here"
+                    required/>
+                <br />
+
+                <label for="name">Address: </label>
+                <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="E.g. 109 Cupcake Av."/>
+                <br />
+
+                <label for="name">Number: </label>
+                <input
+                    type="tel"
+                    id="number"
+                    name="number"
+                    placeholder="E.g. 123-456-7890"/>
+                <br />
+
+                <input
+                    type="button"
+                    onclick="CorrectForm(document.getElementById('name'), document.getElementById('address'), document.getElementById('number'))"
+                    value="Save"/>
+                </form>    
+
+            <div>
+                <p class="fs-5" id="name-res"></p>
+                <p class="fs-5" id="addr-res"></p>
+                <p class="fs-5" id="num-res"></p>
+            </div>
+
+
+            <h3>
+                Textbox
+            </h3>
+
+            <textarea
+            id="text" 
+            onkeyup="countall(); countletters();" 
+            placeholder="Enter Some Text"
+            name="char-read"
+            rows="10"
+            cols="60"
+            ></textarea>
+            <p id="total">Total Characters:0</p>
+            <p id="total2">Total Letters:0</p>
+           
+            <h3>
+                URLs
+            </h3>
+
+            <p>Show Https/Http Bookmarks</p>
+            <input
+                type="button"
+                id="bookmarks-btn"
+                onclick="makeBookmarks(document.getElementById('bookmarks-list'))"
+                value="Show fav bookmarks"/>
+            <ul class ="" id="bookmarks-list"></ul>
+        </div>
+    </div>
+</body>
+
+
+</html>

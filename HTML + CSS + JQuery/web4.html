@@ -1,0 +1,85 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Potato Head</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="web4.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+    </style>        
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script> 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   
+    <script>
+        $(function () {
+            $(".draggable").draggable();
+        });
+
+        function takeSnapShot() {
+            html2canvas(document.querySelector(".whole-potato"), {
+                allowTaint: true
+            }).then(function(canvas) {
+                document.querySelector("#output").appendChild(canvas);
+            });
+        }
+        $('berserk-img').hover(function(e){
+            $('#image-wrapper').toggleClass('fullscreen'); 
+        });
+        function bigImg() {
+            let x = document.getElementById("berserk-img");
+            x.style.width = "100%";
+            x.style.height="100%";
+        }
+        function normalImg() {
+            let x = document.getElementById("berserk-img");
+            x.style.height = "250px";
+            x.style.width = "300px";
+        }
+
+    </script>
+    <h1>Welcome to the Mr. Potato Head Game</h1>
+    <div class="container-fluid">
+        <div class="whole-potato">
+            <div class="parts">
+                <img src="http://www.cs.washington.edu/education/courses/cse190m/09sp/labs/8-potatohead/hat.png" alt="potato-hat" class="drag-image draggable">
+                <img src="https://i.postimg.cc/LX1LYxjM/Potato-noseandmouth.png" alt="potato-nose&mouth" class="draggable drag-image">
+                <img src="https://www.cs.ryerson.ca/~j39ly/cps530/potato-head/Arms.png" alt="potato-nose&mouth" class="draggable drag-image hands">
+                <img src="https://eclasstutor.com/wp-content/uploads/h5p/content/55/images/file-5df643ec048cf.png" alt="potato-eyes" class="drag-image draggable eyes">
+            </div>
+
+            <div id="body">
+                <img src="https://i.postimg.cc/tTSwJCdc/Potato-Body.png" alt="potato-body">  
+            </div>
+        </div>
+        <input type="button" value="Generate Image" onclick="takeSnapShot()"/>
+        <h1>Generated Image:</h1>
+        <div id="output"></div>
+        <br>
+        <br>
+    </div>
+    <div class="image-wrapper" id="image-wrapper">
+        <img src="https://progameguides.com/wp-content/uploads/2021/10/Apex_Legends_Wallpaper_Me_Myself__Regret.jpg?resize=1024%2C576" alt="Berserk-Wallpaper" id="berserk-img" onmouseover="bigImg()">
+        <button class="btn" id="btn" onclick="normalImg()">x</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
